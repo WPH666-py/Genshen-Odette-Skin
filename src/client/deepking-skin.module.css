@@ -1,0 +1,62 @@
+/**
+ * 奥黛塔 · 霜羽 —— DeepKing 皮肤配色变量
+ *
+ * 本文件是 Genshen-Desktop-Skin 的能力判据之一：
+ * 存在 src/client/deepking-skin.module.css 即认为该皮肤支持 DeepKing。
+ *
+ * 注意（DeepKing 转换器的两个硬性约束）：
+ *   1. 色值必须是 # 开头的十六进制，rgb()/hsl()/颜色名会被忽略；
+ *   2. 不要在暗色作用域里重复声明同名变量 —— extractVars() 是无作用域全文扫描、
+ *      后者覆盖前者，暗色值会把亮色调色板一起刷深。这里暗色统一用 --duskcolor-*
+ *      前缀，且选择器不含 dark 字样。
+ */
+
+:root {
+  /* 亮色 · 奶白晨光（取自立绘的浅底与白袜） */
+  --bg-base: #fafbfe;
+  --bg-layer-1: #fafbfe;
+  --bg-layer-2: #eef2fa;
+  --bg-layer-3: #dde5f4;
+
+  --label-primary: #161c30;
+  --label-secondary: #3d4661;
+  --label-tertiary: #77809c;
+
+  /* 主题色：奥黛塔的粉 */
+  --brand-primary: #6a7bba;
+  --accent: #6a7bba;
+  --primary: #6a7bba;
+
+  --interactive-bg-hover-solid: #e2e8f8;
+  --interactive-bg-active: #c9d6f0;
+
+  --border-l1: #e0e7f5;
+  --border-l2: #c3cde4;
+  --border: #c3cde4;
+
+  --system-warn-bg: #fff4dd;
+  --system-warn-text: #8a5a00;
+}
+
+/* 夜景配色（深粉夜色）：统一 duskcolor 前缀，避免污染亮色变量 */
+[data-theme="midnight"],
+.midnight-theme {
+  --duskcolor-bgbase: #12172b;
+  --duskcolor-bglayer2: #1b2340;
+  --duskcolor-bglayer3: #2a3558;
+
+  --duskcolor-labelprimary: #e8edfa;
+  --duskcolor-labelsecondary: #b0bcd8;
+  --duskcolor-labeltertiary: #7e88a6;
+
+  --duskcolor-brandprimary: #8fa8e0;
+
+  --duskcolor-hoversolid: #2a3558;
+  --duskcolor-activebg: #3d4a78;
+
+  --duskcolor-borderl1: #283259;
+  --duskcolor-borderl2: #3b4874;
+
+  --duskcolor-warnbg: #3a3118;
+  --duskcolor-warntext: #ecd9a0;
+}
